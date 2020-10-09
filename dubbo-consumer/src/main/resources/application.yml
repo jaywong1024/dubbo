@@ -1,0 +1,24 @@
+dubbo:
+  # 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样
+  application:
+    name: consumer
+  # 使用 zookeeper 广播注册中心暴露发现服务地址
+  registry:
+    protocol: zookeeper
+    address: @host@:2181
+  monitor:
+    protocol: registry
+  consumer:
+    # 关闭所有服务的启动时检查
+    check: false
+    # 调用超时时间（1.5s）
+    timeout: 1500
+    # 超时后重试次数（不包含第一次）
+    retries: 3
+# 端口
+server:
+  port: 8078
+# 配置日志
+logging:
+  level:
+    com.dubbo.consumer.controller: debug

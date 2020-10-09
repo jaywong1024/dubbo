@@ -1,0 +1,12 @@
+### 使用 id => 1 获取用户信息
+GET http://localhost:8078/api/user/1
+Accept: */*
+Cache-Control: no-cache
+
+### 添加用户信息
+POST http://localhost:8078/api/user
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"username":"鸣人","age":99}

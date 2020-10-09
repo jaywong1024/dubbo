@@ -1,0 +1,31 @@
+dubbo:
+  # 提供方应用信息，用于计算依赖关系
+  application:
+    name: provider
+  # 使用 zookeeper 广播注册中心暴露服务地址
+  registry:
+    protocol: zookeeper
+    address: @host@:2181
+  # 声明需要暴露的服务接口
+  protocol:
+    name: dubbo
+    port: 20880
+  monitor:
+    protocol: registry
+#  元数据配置
+  metadata-report:
+    address: zookeeper://@host@:2181
+# 端口
+server:
+  port: 8077
+spring:
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://@host@:3306/dubbo
+    username: root
+    password: 12345
+# 配置日志
+logging:
+  level:
+    com.dubbo.provider.mapper: debug
