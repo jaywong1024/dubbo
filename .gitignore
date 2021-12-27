@@ -1,2 +1,4 @@
 # Project exclude paths
-/dubbo-api/target/
+/**/target/
+.idea/
+*.iml
